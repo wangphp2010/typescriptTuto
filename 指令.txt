@@ -8,7 +8,9 @@
 	$ tsc init 会创建设置文件 tscofig.json
 		修改   
 			"outDir": "./dist",       //默认输出js的文件夹            
-			"rootDir": "./src",		// 默认的源文件夹
-		修改完  敲$ tsc  会编译src下的文件到dist
+			"rootDir": "./src",		// 默认的源文件夹 修改完  敲$ tsc  会编译src下所有文件到dist
+			"strictNullChecks": false // 不进行空检查(允许空值) 指令为 $ tsc 或$ tsc  test.ts --strictNullChecks   如果用指令 $tsc test.ts  这样不管strictNullChecks是不是true 都不会进行空检查
+		
+
 			
-	$ tsc -w 开启 动态侦测 ,每当修改完.ts文件 ,系统会自动编译成js		
+	$ tsc -w 开启 动态侦测 ,每当修改完.ts文件 ,系统会自动编译成js	
