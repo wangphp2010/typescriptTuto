@@ -80,3 +80,73 @@ data[10] = 'OO' ; // 结果数组 5-9会是空元素
 
 
 ~~~~
+
+多维数组
+==========
+~~~js
+
+let data:number[][] =[
+                        [1,2,3] ,
+                        [10,20,30],
+                        [100,200,300],
+                      ] ;
+~~~
+
+
+枚举类型
+==============
+enum name{ name1, name2 , name3 ... } //里面都是常量
+
+
+~~~js
+    enum Sec{
+        MALE,
+        FEMALE,
+        UNKNONW
+    }
+    Let memberSex:Sex = Sex.FEMALE ;
+    console.log(memberSex) //输入 1 数字类型
+    console.log(Sex[memberSex]) //输入 FEMALE
+    
+    // 应用
+        switch(+memberSex )//加写+为报错 写加 其实是把memberSex当成数字类型
+        {
+            case Sex.MALE:
+                console.log('男');
+                break;
+        
+            case Sex.FEMALE:
+                console.log('女');
+                break;
+                
+            case Sex.UNKNOW:
+                console.log('未知');
+                break;
+                
+        }
+
+       function checkSex(sex:Sex )
+       {
+            switch(sex ) 
+            {
+                case Sex.MALE:
+                    console.log('男');
+                    break;
+            
+                case Sex.FEMALE:
+                    console.log('女');
+                    break;
+                    
+                case Sex.UNKNOW:
+                    console.log('未知');
+                    break;
+                    
+            }
+       } 
+
+
+
+
+    
+
+~~~ 
