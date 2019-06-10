@@ -213,6 +213,172 @@ enum name{ name1, name2 , name3 ... } //里面都是常量
                     });
             ~~~
         
-    ### 编译运行  tsc test.ts  
+### 编译运行  tsc test.ts  
+
+
+
+## 函数的使用
+    ===============
+    ~~~js
+    function Fname(param1:type ....  ):return_type{}
+    
+    function add(x:number,y:number):number{ return x+y ; }
+
+    let func_add = add ; // 把函数赋值给变量 这个变量也是函数了
+    ~~~
+
+
+## 箭头函数
+    =========
+        ### 函数的定义
+        ~~~js
+        (param:type,....):return_type => { }
+        ~~~
+        ### 使用
+        ~~~js
+          (x:number,y:number):number =>{return x * y ; }
+
+        let func_add = (x:number,y:number):number =>{return x+y ; }
+        ~~~
+
+
+##可省略参数 
+?:
+~~~js
+//加问号
+function sayHello(name?: string):string{
+    if(name === undefined)
+    return "hello koma ";
+    else 
+    return "hello " + name  ; 
+}
+// 或者 提供默认值
+function sayHello(name : string  = "koma"):string{
+    
+    return "hello " + name  ; 
+}
+~~~
+
+## 定义参数个数不确定的函数
+
+~~~js
+// 参数必须是数组类型
+function add2(...vals:number[]):number{
+    let result = 0 ;
+    for(let val of vals)
+    {result +=val;}
+    return result ; 
+}
+console.log(add2(1,2,3,4))
+~~~
+
+## 类的定义 使用
+
+~~~js
+//定义
+class classname
+{
+    property_name1:type;
+    property_name2:type;
+
+    constructor(param1.....){}
+
+    method1(param1):return_type{}
+    method2(param1):return_type{}
+    
+}
+//实例1
+class Person
+{
+    private name:string; //本类访问
+     public sex:number; //共有访问
+      age:number ; // 默认是public 
+      protected add:string // 本类和子类访问
+
+    constructor(name:string , sex:number)
+    {
+        this.name = name ;
+        this.sex = sex ;
+    }
+
+    sayhello()
+    {
+        console.log( `${this.name} , 你好` );
+    }
+    
+}
+let person = new Person("小马" , 1 );
+ person.sayhello() ; 
+ 
+ console.log( person.name )    ;
+
+ console.log( person.sex )    ;
+
+
+//实例2
+class Database
+{
+    public dbname1:string ;
+    private dbname2:string ;
+    protected dbname3:string ;
+
+    constructor(dbname:string)
+    {
+        this.dbname = dbname ;
+    }
+
+    get name():string  // 编译时要加--target es5:  $ tsc test.ts --target es5 .使用方法: 当变量使用而不是当方法使用
+    {
+        return this.dbname2;
+    }
+    set name(val:string)
+    {
+        this.dbname2 = val ;
+    }
+
+    // 外部调用
+    public  showDb()
+    {
+        console.log( `数据库: ${this.dbname1}`) ;
+    }
+    //子类本类 内部调用
+    protected  connect()
+    {
+        console.log( ` ${this.dbname3} ` , " 连接中.... ") ;
+
+    }
+
+  //本类 内部调用
+    private  connect()
+    {
+        console.log( ` ${this.dbname2} ` , " 关闭 ") ;
+
+    }
+
+}
+
+
+class PostgreSql extends Database
+{
+    public do()
+    {
+        super.connect() ; // super.connect() 表示自己父类的
+    }
+
+}
+
+let db = new Database("Oracle甲骨文");
+
+console.log(db.name) //注意这里没有括号
+db.name = "nini " ;
+console.log(db.name) //注意这里没有括号
+
+~~~
+
+类的静态成员
+=======
+
+类的静态成员指不用实例化就能够访问或使用的属性或方法 加 static 
+用法 Database.dbname = "fff"; console.log(Database.dbname) ; Database.connect();
 
 
