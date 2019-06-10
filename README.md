@@ -1,3 +1,5 @@
+指令
+===
 	$ npm install -g typescript 安装 typescript 编译器 没有写-g会安装到本地文件夹
 	
 	$ npm bin -g 查看安装目录
@@ -13,7 +15,7 @@
 			
 	$ tsc -w 开启 动态侦测 ,每当修改完.ts文件 ,系统会自动编译成js		
 
-    ## 变量使用前要定义
+## 变量使用前要定义
     ~~~js
 
     let/var myname:string = 'jim' ;
@@ -31,8 +33,8 @@
     + string | boolean | number...联合类型
 
 
-    ##var和let的区别
-    ===================
+## var和let的区别
+===================
     ~~~js
         if(true)
         {
@@ -47,7 +49,7 @@
         // let 定的变量不可以被重新定义
     ~~~
 
-    常量
+## 常量
     ===============
     ~~~js
     
@@ -67,8 +69,10 @@
 
     ~~~
 
-数组
-=============
+
+## 数组
+======
+
 ~~~js
 //数组定义
 let data:string[] = ['java' , 'ruby','kotlin','dart' ]
