@@ -54,7 +54,7 @@ console.log(add2(1,2,3,4)) ;
  console.log( person.sex )    ; */
 
 
-class Data {
+/* class Data {
     private dbname: string;
 
     constructor(dbname: string) { this.dbname = dbname; }
@@ -67,4 +67,53 @@ class Data {
 }
 
 let db = new Data(" mon agence ") ;
-console.log(db.name);
+console.log(db.name); */
+
+
+namespace com.kkvideo{
+
+    // 导出类
+    export class Kuser{
+        constructor(){}
+   
+            sayhello()
+            {
+                console.log("hi . hello ");
+            }
+        }
+    //导出函数
+    export function showVs(){
+        console.log("Version 1.2.63 ");
+
+    }
+    //嵌套子命名空间
+    export namespace util{
+
+        export class mydatabasse{
+            private dbname:string ;
+                constructor(dbname:string){
+                    this.dbname = dbname;
+
+                }
+
+                showme()
+                {
+                    console.log( this.dbname + " show show ");
+                }
+            }
+
+
+        
+    }
+ 
+}
+
+/* let  user = new com.kkvideo.Kuser();
+user.sayhello();
+  
+com.kkvideo.showVs();*/
+
+
+let db = new  com.kkvideo.util.mydatabasse("mysql");
+
+db.showme();

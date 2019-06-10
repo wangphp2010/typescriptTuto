@@ -382,3 +382,68 @@ console.log(db.name) //注意这里没有括号
 用法 Database.dbname = "fff"; console.log(Database.dbname) ; Database.connect();
 
 
+命名空间
+=======
+
+### 命名空间定义方法
+~~~js
+//定义方法
+namespace ns_name{
+    export class class_name{}
+    export function func_name{}
+    export namespace ns_name{}
+}
+~~~
+
+### 命名空间使用方法
+
+~~~js
+namespace com.kkvideo{
+
+    // 导出类
+    export class Kuser{
+        constructor(){}
+   
+        sayhello()
+        {
+            console.log("hi . hello ");
+        }
+     }
+    //导出函数
+    export function showVs{
+        console.log("Version 1.2.63 ");
+
+    }
+    //嵌套子命名空间
+    export namespace util{
+
+        export class mydatabasse{
+            private dbname:string ;
+                constructor(dbname:string){
+                    this.dbname = dbname;
+
+                }
+
+                showme()
+                {
+                    console.log( this.dbname + " show show ");
+                }
+            }
+
+
+        
+    }
+ 
+}
+
+let  user = new com.kkvideo.Kuser();
+user.sayhello();
+
+com.kkvideo.showVs();
+
+let db = new com.kkvideo.util.mydatabasse("mysql");
+
+db.showme();
+
+~~~
+

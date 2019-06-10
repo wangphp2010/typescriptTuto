@@ -51,14 +51,58 @@ console.log(add2(1,2,3,4)) ;
  console.log( person.name )    ;
 
  console.log( person.sex )    ; */
-var Data = /** @class */ (function () {
-    function Data(dbname) {
-        this.dbname = dbname;
+/* class Data {
+    private dbname: string;
+
+    constructor(dbname: string) { this.dbname = dbname; }
+
+    name():string{
+        return this.dbname ;
     }
-    Data.prototype.name = function () {
-        return this.dbname;
-    };
-    return Data;
-}());
-var db = new Data(" mon agence ");
-console.log(db.name);
+
+
+}
+
+let db = new Data(" mon agence ") ;
+console.log(db.name); */
+var com;
+(function (com) {
+    var kkvideo;
+    (function (kkvideo) {
+        // 导出类
+        var Kuser = /** @class */ (function () {
+            function Kuser() {
+            }
+            Kuser.prototype.sayhello = function () {
+                console.log("hi . hello ");
+            };
+            return Kuser;
+        }());
+        kkvideo.Kuser = Kuser;
+        //导出函数
+        function showVs() {
+            console.log("Version 1.2.63 ");
+        }
+        kkvideo.showVs = showVs;
+        //嵌套子命名空间
+        var util;
+        (function (util) {
+            var mydatabasse = /** @class */ (function () {
+                function mydatabasse(dbname) {
+                    this.dbname = dbname;
+                }
+                mydatabasse.prototype.showme = function () {
+                    console.log(this.dbname + " show show ");
+                };
+                return mydatabasse;
+            }());
+            util.mydatabasse = mydatabasse;
+        })(util = kkvideo.util || (kkvideo.util = {}));
+    })(kkvideo = com.kkvideo || (com.kkvideo = {}));
+})(com || (com = {}));
+/* let  user = new com.kkvideo.Kuser();
+user.sayhello();
+  
+com.kkvideo.showVs();*/
+var db = new com.kkvideo.util.mydatabasse("mysql");
+db.showme();
