@@ -181,7 +181,7 @@ enum name{ name1, name2 , name3 ... } //里面都是常量
     建立main.js
         $ node main.js
 
-## typescript中的使用方法
+### typescript中的使用方法
      
         1.找到tsd文件 #tsd 是用来编译ts文件用的,运行的是编译后的 js文件
         2.导入tsd文件
