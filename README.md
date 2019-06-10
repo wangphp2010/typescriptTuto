@@ -181,21 +181,21 @@ enum name{ name1, name2 , name3 ... } //里面都是常量
     建立main.js
         $ node main.js
 
-   ## typescript中的使用方法
+## typescript中的使用方法
      
         1.找到tsd文件 #tsd 是用来编译ts文件用的,运行的是编译后的 js文件
         2.导入tsd文件
         3.编写代码
         4.编译运行
 
-    ### 找到tsd文件
+### 找到tsd文件
         https://microsoft.github.io/TypeSearch/   注意大小写 否则打不开
         方法:在这个网址中输入 request  会找到安装代码
     
-    ### 导入tsd文件
+### 导入tsd文件
         $ npm install --save @types/request //刚刚找到的安装代码  
 
-    ### 编写代码
+### 编写代码
             test.ts
             ~~~js
                     import request = require('request');
